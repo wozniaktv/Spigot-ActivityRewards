@@ -1,1 +1,6 @@
+name: ActivityRewards
+version: Beta-0.1
 main: wozniaktv.it.Main
+description: "Reward your players for their activity"
+api-version: 1.19
+author: WoZniaK_TV

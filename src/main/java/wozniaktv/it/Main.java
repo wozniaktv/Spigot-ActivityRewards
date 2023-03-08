@@ -1,21 +1,30 @@
 package wozniaktv.it;
 
+import org.bukkit.Bukkit;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.Recipe;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitScheduler;
+import org.bukkit.scheduler.BukkitTask;
+import wozniaktv.it.events.JoinQuitListening;
 
 public class Main extends JavaPlugin {
 
     private static Main plugin = null;
+    private ActivityTracker activityTracker = null;
 
     @Override
     public void onDisable() {
-
+        Bukkit.getScheduler().cancelTasks(this);
     }
 
     @Override
     public void onEnable() {
         plugin = this;
+        activityTracker = new ActivityTracker();
         readConfig();
         sendPluginStartedMessage();
+        registerListeners();
     }
 
 
@@ -39,13 +48,17 @@ public class Main extends JavaPlugin {
         consoleMessage("");
     }
 
+    protected void registerListeners(){
+        getServer().getPluginManager().registerEvents(new JoinQuitListening(), this);
+    }
+
 
     // ==== PUBLIC METHODS
 
     /**
      @return The instance of the Main.class (Plugin)
      */
-    public static Main Instance(){
+    public static Main getInstance(){
         return plugin;
     }
     /**
