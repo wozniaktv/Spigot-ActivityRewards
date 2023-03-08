@@ -1,0 +1,16 @@
+# ActivtyRewards - by wozDev
+
+receiveEach: 1800 #(seconds) [30 Minutes]
+# They'll be rewarded whenever they'll reach this amount of played seconds.
+
+experience: 50 #They will receive the desired xp each time they'll be rewarded; put 0 to not give any.
+
+#They will receive randomly one of the items in this list whenever they'll be rewarded.
+rewards: # List of correct Material names: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+  - "DIAMOND 2"
+  - "IRON_INGOT 4"
+  - "GOLD_INGOT 8"
+  - "ANCIENT_DEBRIS 1"
+
+messages:
+  itemReceived: "&bCongratulations %player%! You received x%amount% %item%!"
