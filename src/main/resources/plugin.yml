@@ -1,6 +1,10 @@
 name: ActivityRewards
-version: Beta-0.2
+version: Beta-0.3
 main: wozniaktv.it.Main
 description: "Reward your players for their activity"
 api-version: 1.19
 author: WoZniaK_TV
+commands:
+  areload:
+    usage: /areload
+    description: Reload config.yml file of the Plugin.

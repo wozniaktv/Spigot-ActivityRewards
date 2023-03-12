@@ -6,7 +6,7 @@
 
     <groupId>wozniaktv.it</groupId>
     <artifactId>ActivityRewards</artifactId>
-    <version>Beta-0.2</version>
+    <version>Beta-0.3</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

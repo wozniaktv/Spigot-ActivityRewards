@@ -14,3 +14,5 @@ rewards: # List of correct Material names: https://hub.spigotmc.org/javadocs/buk
 
 messages:
   itemReceived: "&bCongratulations %player%! You received x%amount% %item%!"
+  msgReloadNoPermission: "&4You can't execute this command. You might need 'ar.reload' permission!"
+  msgReloadSuccess: "&2The file config.yml has been reloaded!"

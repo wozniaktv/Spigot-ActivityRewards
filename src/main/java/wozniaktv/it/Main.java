@@ -2,6 +2,7 @@ package wozniaktv.it;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import wozniaktv.it.commands.Reload;
 import wozniaktv.it.events.JoinQuitListening;
 
 public class Main extends JavaPlugin {
@@ -16,11 +17,14 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         plugin = this;
         activityTracker = new ActivityTracker();
         readConfig();
         sendPluginStartedMessage();
         registerListeners();
+        registerCommandExecutors();
+
     }
 
 
@@ -47,6 +51,8 @@ public class Main extends JavaPlugin {
     protected void registerListeners(){
         getServer().getPluginManager().registerEvents(new JoinQuitListening(), this);
     }
+
+    protected void registerCommandExecutors(){ getCommand("areload").setExecutor(new Reload()); }
 
 
     // ==== PUBLIC METHODS

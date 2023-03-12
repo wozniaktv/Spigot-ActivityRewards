@@ -54,8 +54,6 @@ public class ActivityTracker {
 
                         if(count>0 || material_extraction != null){
 
-
-
                             ItemStack is = null;
 
                             try{
@@ -68,7 +66,7 @@ public class ActivityTracker {
                                 if(p.getInventory().firstEmpty()==-1){
                                     p.getWorld().dropItemNaturally(p.getLocation(),is);
                                 }else{
-                                    p.getInventory().setItem(p.getInventory().firstEmpty(),is);
+                                    p.getInventory().addItem(is);
                                 }
                             }catch(Exception ex){
                                 main.consoleErrorMessage("Error while giving player "+p.getName()+" the reward \""+reward+"\",\nError:\n"+ex);
